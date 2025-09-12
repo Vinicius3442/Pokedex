@@ -1,99 +1,108 @@
 <!doctype html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Pokédex</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <main class="pokedex" role="application" aria-label="Pokédex">
-    <header class="pokedex-header">
-      <h1>Pokédex</h1>
-      <p class="subtitle">Busque por nome, nº (ID) ou tipo. Use as setas para navegar.</p>
-    </header>
+    <div id="pokedex-container" class="pokedex-container">
+      <header class="pokedex-header">
+        <div class="header-lights">
+          <span class="light blue"></span>
+          <span class="light yellow"></span>
+        </div>
+        <h1>Pokédex</h1>
+        <p class="subtitle">Busque por nome, nº (ID) ou tipo.</p>
+      </header>
 
-    <section class="search-section" aria-label="Ferramentas de busca">
-      <div class="search-row">
-        <label for="search-input" class="visually-hidden">Pesquisar</label>
-        <input id="search-input" type="text" placeholder="Nome, ID ou Tipo" aria-label="Campo de pesquisa" />
-        <button id="search-btn" type="button" aria-label="Pesquisar">Pesquisar</button>
-      </div>
+      <section class="search-section" aria-label="Ferramentas de busca">
+        <div class="search-row">
+          <input id="search-input" type="text" placeholder="Nome, ID ou Tipo" aria-label="Campo de pesquisa" />
+          <button id="search-btn" type="button" aria-label="Pesquisar">Pesquisar</button>
+        </div>
 
-      <div class="search-options">
-        <button id="search-name-btn" type="button" aria-label="Buscar por nome">Por Nome</button>
-        <button id="search-id-btn" type="button" aria-label="Buscar por ID">Por ID</button>
-        <button id="search-type-btn" type="button" aria-label="Buscar por Tipo">Por Tipo</button>
+        <div class="search-options">
+          <button id="search-name-btn" type="button" aria-label="Buscar por nome">Nome</button>
+          <button id="search-id-btn" type="button" aria-label="Buscar por ID">ID</button>
+          <button id="search-type-btn" type="button" aria-label="Buscar por Tipo">Tipo</button>
+          <select id="type-select" aria-label="Selecionar tipo">
+            <option value="">— Tipos —</option>
+            <option value="normal">normal</option>
+            <option value="fire">fire</option>
+            <option value="water">water</option>
+            <option value="grass">grass</option>
+            <option value="electric">electric</option>
+            <option value="ice">ice</option>
+            <option value="fighting">fighting</option>
+            <option value="poison">poison</option>
+            <option value="ground">ground</option>
+            <option value="flying">flying</option>
+            <option value="psychic">psychic</option>
+            <option value="bug">bug</option>
+            <option value="rock">rock</option>
+            <option value="ghost">ghost</option>
+            <option value="dragon">dragon</option>
+            <option value="dark">dark</option>
+            <option value="steel">steel</option>
+            <option value="fairy">fairy</option>
+          </select>
+        </div>
+      </section>
 
-        <label for="type-select" class="visually-hidden">Selecione um tipo</label>
-        <select id="type-select" aria-label="Selecionar tipo">
-          <option value="">— Tipos —</option>
-          <option value="normal">normal</option>
-          <option value="fire">fire</option>
-          <option value="water">water</option>
-          <option value="grass">grass</option>
-          <option value="electric">electric</option>
-          <option value="ice">ice</option>
-          <option value="fighting">fighting</option>
-          <option value="poison">poison</option>
-          <option value="ground">ground</option>
-          <option value="flying">flying</option>
-          <option value="psychic">psychic</option>
-          <option value="bug">bug</option>
-          <option value="rock">rock</option>
-          <option value="ghost">ghost</option>
-          <option value="dragon">dragon</option>
-          <option value="dark">dark</option>
-          <option value="steel">steel</option>
-          <option value="fairy">fairy</option>
-        </select>
-      </div>
-
-    </section>
-
-    <section class="display-section" aria-label="Exibição do Pokémon">
-      <div class="pokemon-card" role="region" aria-label="Ficha do Pokémon">
-        <div class="card-header">
-          <button id="prev-btn" type="button" aria-label="Pokémon anterior">◀</button>
-          <div class="id-name">
+      <section class="display-section" aria-label="Exibição do Pokémon">
+        <div class="pokemon-card" role="region" aria-label="Ficha do Pokémon">
+          <div class="card-header-compact">
+            <button id="prev-btn" type="button" aria-label="Pokémon anterior">◀</button>
             <p id="pokemon-id" class="pokemon-id">#000</p>
             <h2 id="pokemon-name" class="pokemon-name">—</h2>
+            <button id="next-btn" type="button" aria-label="Próximo Pokémon">▶</button>
           </div>
-          <button id="next-btn" type="button" aria-label="Próximo Pokémon">▶</button>
-        </div>
 
-        <div class="card-body">
-          <figure class="pokemon-sprite">
-            <img id="pokemon-img" src="" alt="Imagem do Pokémon" width="200" height="200" />
-            <figcaption id="pokemon-species" class="pokemon-species">Espécie</figcaption>
-          </figure>
+          <div class="card-body-compact">
+            <figure class="pokemon-sprite-compact">
+              <img id="pokemon-img" src="" alt="Imagem do Pokémon" width="100" height="100" />
+              <figcaption id="pokemon-species" class="pokemon-species">Espécie</figcaption>
+            </figure>
 
-          <div class="pokemon-info">
-            <div id="pokemon-types" class="pokemon-types" aria-label="Tipos do Pokémon">
+            <div class="pokemon-info-compact">
+              <div id="pokemon-types" class="pokemon-types" aria-label="Tipos do Pokémon"></div>
+              <p id="pokemon-flavor" class="pokemon-flavor">Descrição / flavor text</p>
             </div>
-
-            <p id="pokemon-flavor" class="pokemon-flavor">Descrição / flavor text</p>
           </div>
+
+          <div class="stats-section-compact">
+            <h3 class="stats-title-compact">Status Base</h3>
+            <div id="pokemon-stats" class="pokemon-stats" aria-label="Status base"></div>
+          </div>
+
+          <footer class="card-footer-compact">
+            <small class="generation" id="pokemon-generation">Geração: —</small>
+          </footer>
         </div>
 
-        <div class="stats-section">
-          <h3 class="stats-title">Status Base</h3>
-          <div id="pokemon-stats" class="pokemon-stats" aria-label="Status base">
-          </div>
-        </div>
+        <section class="evolution-chain-compact" aria-label="Linha evolutiva do Pokémon">
+          <h3>Linha Evolutiva</h3>
+          <div id="evolution-container" class="evolution-container" aria-live="polite"></div>
+        </section>
 
-        <footer class="card-footer">
-          <small class="generation" id="pokemon-generation">Geração: —</small>
-        </footer>
-      </div>
-    </section>
+        <section class="recent-history-compact" aria-label="Últimos Pokémon pesquisados">
+          <h3>Últimos Pesquisados</h3>
+          <div id="history-container" class="history-container" aria-live="polite"></div>
+        </section>
+      </section>
 
-    <section class="extras" aria-label="Controles extras">
-      <button id="random-btn" type="button" aria-label="Pokémon aleatório">Aleatório</button>
-      <button id="reset-btn" type="button" aria-label="Resetar">Resetar</button>
-    </section>
-
+      <section class="extras-compact" aria-label="Controles extras">
+        <button id="random-btn" type="button" aria-label="Pokémon aleatório">Aleatório</button>
+        <button id="reset-btn" type="button" aria-label="Resetar">Resetar</button>
+      </section>
+    </div>
   </main>
   <script src="script.js"></script>
 </body>
+
 </html>

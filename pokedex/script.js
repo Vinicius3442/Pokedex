@@ -9,16 +9,19 @@ const typeSelect = document.getElementById('type-select');
 const pokemonName = document.getElementById('pokemon-name');
 const pokemonId = document.getElementById('pokemon-id');
 const pokemonImg = document.getElementById('pokemon-img');
-const pokemonTypes = document.getElementById('pokemon-types');;
+const pokemonTypes = document.getElementById('pokemon-types');
 const pokemonSpecies = document.getElementById('pokemon-species');
 const pokemonGeneration = document.getElementById('pokemon-generation');
 const pokemonFlavor = document.getElementById('pokemon-flavor');
 const pokemonStats = document.getElementById('pokemon-stats');
 
-let currentPokemon = 1;
-const maxPokemon = 1010; // até Gen 9
+const evolutionContainer = document.getElementById('evolution-container');
+const historyContainer = document.getElementById('history-container');
 
-// Função para buscar Pokémon pelo nome ou ID
+let currentPokemon = 1;
+const maxPokemon = 1010;
+let history = [];
+
 async function fetchPokemon(query) {
     if (!query) return;
     try {
@@ -62,9 +65,66 @@ async function fetchPokemon(query) {
         const flavorEntry = speciesData.flavor_text_entries.find(ft => ft.language.name === 'en');
         pokemonFlavor.textContent = flavorEntry ? flavorEntry.flavor_text.replace(/\n|\f/g, ' ') : '';
 
+        // Linha evolutiva
+        if (speciesData.evolution_chain) {
+            fetchEvolutionChain(speciesData.evolution_chain.url);
+        }
+
+        // Atualiza histórico
+        updateHistory(data);
+
     } catch (err) {
         alert(err.message);
     }
+}
+
+// Buscar linha evolutiva
+async function fetchEvolutionChain(url) {
+    try {
+        const res = await fetch(url);
+        if (!res.ok) throw new Error('Erro ao carregar evolução');
+        const data = await res.json();
+
+        evolutionContainer.innerHTML = '';
+
+        let evoChain = [];
+        let evoData = data.chain;
+
+        do {
+            evoChain.push(evoData.species.name);
+            evoData = evoData.evolves_to[0];
+        } while (evoData && evoData.hasOwnProperty('evolves_to'));
+
+        for (let name of evoChain) {
+            const pokeRes = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
+            const pokeData = await pokeRes.json();
+
+            const div = document.createElement('div');
+            div.classList.add('evolution-item');
+            div.innerHTML = `
+                <img src="${pokeData.sprites.front_default}" alt="${name}">
+                <p>${name}</p>
+            `;
+            evolutionContainer.appendChild(div);
+        }
+    } catch (err) {
+        console.error("Erro ao carregar linha evolutiva:", err);
+    }
+}
+
+// Atualizar histórico
+function updateHistory(pokemon) {
+    history = [pokemon, ...history.filter(p => p.id !== pokemon.id)].slice(0, 5);
+
+    historyContainer.innerHTML = '';
+    history.forEach(p => {
+        const div = document.createElement('div');
+        div.classList.add('history-item');
+        div.innerHTML = `
+            <img src="${p.sprites.front_default}" alt="${p.name}" title="${p.name}">
+        `;
+        historyContainer.appendChild(div);
+    });
 }
 
 // Navegação
@@ -95,5 +155,4 @@ async function fetchPokemonByType(type) {
     }
 }
 
-// Inicializa com o primeiro Pokémon
 fetchPokemon(currentPokemon);
