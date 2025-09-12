@@ -1,175 +1,207 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pokémon FireRed - Intro Complexa</title>
-<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-<style>
-  * { margin:0; padding:0; box-sizing:border-box; }
-  body, html { width:100%; height:100%; font-family:'Press Start 2P', cursive; overflow:hidden; background:black; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pokémon FireRed - Intro Complexa</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-  .game-container {
-    position:absolute;
-    top:50%; left:50%;
-    transform:translate(-50%, -50%);
-    width:640px; /* Largura do contêiner do jogo */
-    height:480px; /* Altura do contêiner do jogo */
-    overflow:hidden;
-    background-color: black;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-direction:column;
-  }
+    body,
+    html {
+      width: 100%;
+      height: 100%;
+      font-family: 'Press Start 2P', cursive;
+      overflow: hidden;
+      background: black;
+    }
 
-  .game-container img {
-    max-width:100%;
-    max-height:100%;
-    object-fit: contain; /* Garante que a imagem caiba sem cortar */
-    display: block;
-    /* Adicionado para permitir que os GIFs preencham mais */
-    width: 100%;
-    height: 100%;
-  }
+    .game-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 640px;
+      height: 480px;
+      overflow: hidden;
+      background-color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
 
-  .intro-screen {
-    position:fixed; top:0; left:0; width:100%; height:100%;
-    display:flex; justify-content:center; align-items:center; background:black; z-index:10;
-  }
+    .game-container img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
 
-  #menu-screen {
-    display:none;
-    position:fixed; /* Manter fixed para cobrir a tela inteira */
-    top:0; left:0; width:100%; height:100%;
-    justify-content:center;
-    align-items:center;
-    display: flex; /* Garante que o game-container seja centralizado por flex */
-  }
+    .intro-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: black;
+      z-index: 10;
+    }
 
-  #menu-screen .game-container {
-    position: relative;
-    top: auto;
-    left: auto;
-    transform: none;
-    background-color: black;
-    /* Ajuste para centralizar o conteúdo do menu-screen */
-    display: flex;
-    flex-direction: column; /* Para empilhar a imagem e o botão */
-    justify-content: center;
-    align-items: center;
-  }
+    #menu-screen {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+    }
 
-  #menu-screen img {
-    max-width:100%;
-    max-height:100%;
-    object-fit: contain;
-    display:block;
-  }
+    #menu-screen .game-container {
+      position: relative;
+      top: auto;
+      left: auto;
+      transform: none;
+      background-color: black;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
 
-  #start-btn {
-    font-family:'Press Start 2P', cursive;
-    font-size:1rem;
-    color:white;
-    text-transform:uppercase;
-    cursor:pointer;
-    animation: blink 1s infinite;
-    user-select:none;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    margin-top: 50px; /* Aumentado de 20px para 50px para descer mais */
-    padding: 5px 10px;
-    position: absolute; /* Usar posição absoluta para maior controle */
-    bottom: 50px; /* Ajuste a distância do fundo */
-    left: 50%;
-    transform: translateX(-50%); /* Centraliza horizontalmente */
-  }
+    #menu-screen img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      display: block;
+    }
 
-  @keyframes blink {
-    0%, 50%, 100% { opacity:1; }
-    25%, 75% { opacity:0; }
-  }
-</style>
+    #start-btn {
+      font-family: 'Press Start 2P', cursive;
+      font-size: 1rem;
+      color: white;
+      text-transform: uppercase;
+      cursor: pointer;
+      animation: blink 1s infinite;
+      user-select: none;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+      margin-top: 50px;
+      padding: 5px 10px;
+      position: absolute;
+      bottom: 50px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    @keyframes blink {
+
+      0%,
+      50%,
+      100% {
+        opacity: 1;
+      }
+
+      25%,
+      75% {
+        opacity: 0;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<!-- Tela 1: Game Freak Logo -->
-<div id="gamefreak-screen" class="intro-screen">
-  <div class="game-container">
-    <img src="./img/pokeintro.gif" alt="Game Freak Intro">
+  <!-- Tela 1: Game Freak Logo -->
+  <div id="gamefreak-screen" class="intro-screen">
+    <div class="game-container">
+      <img src="./img/pokeintro.gif" alt="Game Freak Intro">
+    </div>
+    <audio id="gamefreak-music" src="./aud/Gf.mp3"></audio>
   </div>
-  <audio id="gamefreak-music" src="./aud/Gf.mp3"></audio>
-</div>
 
-<!-- Tela 2: Gengar vs Nidoking Battle -->
-<div id="battle-screen" class="intro-screen" style="display:none;">
-  <div class="game-container">
-    <img src="./img/pokeintrobattle.gif" alt="Gengar vs Nidoking Battle">
+  <!-- Tela 2: Gengar vs Nidoking Battle -->
+  <div id="battle-screen" class="intro-screen" style="display:none;">
+    <div class="game-container">
+      <img src="./img/pokeintrobattle.gif" alt="Gengar vs Nidoking Battle">
+    </div>
+    <audio id="battle-music" src="./aud/introbattle.mp3"></audio>
   </div>
-  <audio id="battle-music" src="./aud/introbattle.mp3"></audio>
-</div>
 
-<!-- Tela 3: Menu Principal -->
-<div id="menu-screen">
-  <div class="game-container">
-    <img src="./img/Pokemenu.png" alt="Menu Principal" class="menu-image">
-    <div id="start-btn">Press Start</div>
+  <!-- Tela 3: Menu Principal -->
+  <div id="menu-screen">
+    <div class="game-container">
+      <img src="./img/Pokemenu.png" alt="Menu Principal" class="menu-image">
+      <div id="start-btn">Press Start</div>
+    </div>
+    <audio id="menu-music" src="./aud/titlescreen.mp3" loop></audio>
   </div>
-  <audio id="menu-music" src="./aud/titlescreen.mp3" loop></audio>
-</div>
 
-<script>
-const gamefreakScreen = document.getElementById('gamefreak-screen');
-const battleScreen = document.getElementById('battle-screen');
-const menuScreen = document.getElementById('menu-screen');
+  <script>
+    const gamefreakScreen = document.getElementById('gamefreak-screen');
+    const battleScreen = document.getElementById('battle-screen');
+    const menuScreen = document.getElementById('menu-screen');
 
-const gamefreakMusic = document.getElementById('gamefreak-music');
-const battleMusic = document.getElementById('battle-music');
-const menuMusic = document.getElementById('menu-music');
+    const gamefreakMusic = document.getElementById('gamefreak-music');
+    const battleMusic = document.getElementById('battle-music');
+    const menuMusic = document.getElementById('menu-music');
 
-const startBtn = document.getElementById('start-btn');
+    const startBtn = document.getElementById('start-btn');
 
-const GAMEFREAK_DURATION = 4000;
-const BATTLE_DURATION = 13000;
+    const GAMEFREAK_DURATION = 4000;
+    const BATTLE_DURATION = 13000;
 
-function playAudio(audioElement) {
-  audioElement.currentTime = 0;
-  audioElement.play().catch(() => {});
-}
+    function playAudio(audioElement) {
+      audioElement.currentTime = 0;
+      audioElement.play().catch(() => { });
+    }
 
-function playSequence() {
-  gamefreakScreen.style.display = 'flex';
-  playAudio(gamefreakMusic);
+    function playSequence() {
+      gamefreakScreen.style.display = 'flex';
+      playAudio(gamefreakMusic);
 
-  setTimeout(() => {
-    gamefreakScreen.style.display = 'none';
-    gamefreakMusic.pause();
+      setTimeout(() => {
+        gamefreakScreen.style.display = 'none';
+        gamefreakMusic.pause();
 
-    battleScreen.style.display = 'flex';
-    playAudio(battleMusic);
+        battleScreen.style.display = 'flex';
+        playAudio(battleMusic);
 
-    setTimeout(() => {
-      battleScreen.style.display = 'none';
-      battleMusic.pause();
+        setTimeout(() => {
+          battleScreen.style.display = 'none';
+          battleMusic.pause();
 
-      menuScreen.style.display = 'flex'; // Certifique-se de que 'display: flex' está ativo
-      playAudio(menuMusic);
-    }, BATTLE_DURATION);
+          menuScreen.style.display = 'flex';
+          playAudio(menuMusic);
+        }, BATTLE_DURATION);
 
-  }, GAMEFREAK_DURATION);
-}
+      }, GAMEFREAK_DURATION);
+    }
 
-// Inicia a sequência após interação do usuário para permitir áudio
-document.addEventListener('click', function initSequenceOnce() {
-  playSequence();
-  document.removeEventListener('click', initSequenceOnce);
-});
+    document.addEventListener('click', function initSequenceOnce() {
+      playSequence();
+      document.removeEventListener('click', initSequenceOnce);
+    });
 
-// Evento do botão Start no menu
-startBtn.addEventListener('click', () => {
-  menuMusic.pause();
-  window.location.href = 'pokedex.html';
-});
-</script>
+    startBtn.addEventListener('click', () => {
+      menuMusic.pause();
+      window.location.href = 'pokedex.html';
+    });
+  </script>
 
 </body>
+
 </html>

@@ -16,7 +16,7 @@ const pokemonFlavor = document.getElementById('pokemon-flavor');
 const pokemonStats = document.getElementById('pokemon-stats');
 
 let currentPokemon = 1;
-const maxPokemon = 1010; // atual até Gen 9
+const maxPokemon = 1010; // até Gen 9
 
 // Função para buscar Pokémon pelo nome ou ID
 async function fetchPokemon(query) {
