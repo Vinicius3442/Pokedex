@@ -2,10 +2,10 @@
 ![Banner da Pokedex (em desenvolvimento)](./img/banner.jpg)
 [![Status](https://img.shields.io/badge/Status-Em%20Desenvolvimento-yellow?style=flat-square)]() 
 [![Atualizado](https://img.shields.io/badge/Última%20atualização-Setembro%202025-informational?style=flat-square)]()
-[![Feito por Vinicius Montuani e Equipe ](https://img.shields.io/badge/Autor-Vinicius_Montuani-blueviolet?style=flat-square)]()
+[![Feito por Vinicius Montuani](https://img.shields.io/badge/Autor-Vinicius_Montuani-blueviolet?style=flat-square)]()
 
 ## Acesse a Pokedex online
-[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Acessar-121013?style=for-the-badge&logo=github&logoColor=white)](https://vinicius3442.github.io/Pokedex/pokedex/)
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Acessar-121013?style=for-the-badge&logo=github&logoColor=white)](https://vinicius3442.github.io/Pokedex/))
 
 ---
 
