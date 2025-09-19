@@ -1,8 +1,8 @@
-# Pokedex — Seu Guia Completo Pokémon! 
+# Pokedex — PokeAPI
 ![Banner da Pokedex (em desenvolvimento)](./img/banner.jpg)
 [![Status](https://img.shields.io/badge/Status-Em%20Desenvolvimento-yellow?style=flat-square)]() 
-[![Atualizado](https://img.shields.io/badge/Última%20atualização-Junho%202025-informational?style=flat-square)]()
-[![Feito por Vinicius Montuani e Equipe ](https://img.shields.io/badge/Autor-Vinicius_Montuani_e_Equipe-blueviolet?style=flat-square)]()
+[![Atualizado](https://img.shields.io/badge/Última%20atualização-Setembro%202025-informational?style=flat-square)]()
+[![Feito por Vinicius Montuani e Equipe ](https://img.shields.io/badge/Autor-Vinicius_Montuani-blueviolet?style=flat-square)]()
 
 ## Acesse a Pokedex online
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Acessar-121013?style=for-the-badge&logo=github&logoColor=white)](https://vinicius3442.github.io/Pokedex/pokedex/pokedex.html)
@@ -11,7 +11,7 @@
 
 ## Sobre este projeto
 
-Este projeto é uma Pokedex interativa desenvolvida com foco em recriar a nostalgia dos jogos clássicos de Pokémon, como Fire Red, enquanto utiliza a poderosa **PokeAPI** para exibir informações detalhadas sobre os Pokémon.
+Este projeto é uma Pokedex interativa desenvolvida com foco em recriar a nostalgia dos jogos clássicos de Pokémon, como o Fire Red, enquanto utiliza a **PokeAPI** para exibir informações detalhadas sobre os Pokémon, foi realizado como estudo do tema **API**
 
 O site possui uma introdução cativante inspirada no icônico **Pokémon Fire Red**, com a logo da Game Freak, uma animação da batalha de Gengar e um menu "Press Start" que remete diretamente à experiência original dos jogos.
 
