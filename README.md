@@ -1,6 +1,6 @@
 # Pokedex — PokeAPI
 ![Banner da Pokedex (em desenvolvimento)](./Assets/img/banner.jpg)
-[![Status](https://img.shields.io/badge/Status-Em%20Desenvolvimento-yellow?style=flat-square)]() 
+[![Status](https://img.shields.io/badge/Status-Concluido-purple?style=flat-square)]() 
 [![Atualizado](https://img.shields.io/badge/Última%20atualização-Setembro%202025-informational?style=flat-square)]()
 [![Feito por Vinicius Montuani](https://img.shields.io/badge/Autor-Vinicius_Montuani-blueviolet?style=flat-square)]()
 
