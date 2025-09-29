@@ -64,7 +64,6 @@ Descubra o que torna esta Pokedex especial:
 
 *   **Funcionalidade "Random":**
     Descubra um Pokémon aleatório a qualquer momento! Perfeito para quem gosta de surpresas, está buscando inspiração para uma nova equipe ou simplesmente quer explorar o universo Pokémon sem um objetivo específico.
-    ![Botão Random](https://via.placeholder.com/300x150.png?text=Botao+Random)
 
 *   **Funcionalidade "Reset":**
     Com um único clique, retorne a Pokedex ao seu estado inicial, limpando todas as pesquisas e seleções. Conveniente para começar uma nova busca ou simplesmente recarregar a página de forma rápida.
