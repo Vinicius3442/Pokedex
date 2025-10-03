@@ -22,7 +22,7 @@ Este projeto é uma **Pokedex interativa** desenvolvida com a paixão de recriar
 
 Prepare-se para uma introdução cativante que evoca memórias dos seus primeiros passos no mundo Pokémon! Com a icônica **logo da Game Freak**, uma animação emocionante da **batalha de Gengar** e um nostálgico menu "Press Start", você será transportado diretamente para a experiência original dos jogos.
 
-Nosso objetivo: Unir a nostalgia dos jogos clássicos com a modernidade das APIs para criar uma ferramenta de consulta Pokémon robusta e divertida!
+Objetivo: Unir a nostalgia dos jogos clássicos com a modernidade das APIs para criar uma ferramenta de consulta Pokémon robusta e divertida!
 
 ---
 
